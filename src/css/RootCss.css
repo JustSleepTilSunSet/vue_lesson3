@@ -1,0 +1,33 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+.flex-container {
+    display: flex;
+    height: 50%;
+    padding: 10%;
+    /* background-color: #526E89; */
+    flex-direction:row;
+    flex-wrap: wrap ;
+    /* // 修改以下值試試看 flex-start | flex-end | center | space-between | space-around; */
+    justify-content: center;
+    /* // 修改以下值試試看 flex-start | flex-end | center | space-between | space-around | stretch */
+    align-content: flex-start;
+}
+.item {
+    width: 10%;
+    background-color: goldenrod;
+    margin: 5px;
+    /* justify-content: center; */
+    align-items: center;
+    color: #526E89;
+    /* font-size: 2rem; */
+    padding:1%;
+    
+/* https://nomichuang.medium.com/css-flex-%E5%B1%AC%E6%80%A7-ea2c1db1f925 <== code 參考 */
+}

@@ -2,27 +2,27 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Hello World!!"/>
+    <div class="flex-container">
+        <DraggableLesson msg="清單列表1"/>
+        <DraggableLesson msg="清單列表2"/>
+        <DraggableLesson msg="清單列表3"/>
+    </div>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import DraggableLesson from './components/DraggableLesson.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    DraggableLesson
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('./css/RootCss.css') ;
 </style>
