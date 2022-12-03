@@ -1,0 +1,96 @@
+.contents_bg {
+    /* bg_frame1 */
+    position: absolute;
+    width: 1200px;
+    height: 640px;
+    left: 120px;
+    top: 168px;
+
+    /* Assist 1 */
+    background: #2B2B2B;
+    border-radius: 36px;
+}
+
+.nxt_btn {
+    /* btn_default */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 32px;
+    gap: 8px;
+    position: absolute;
+    width: 203px;
+    height: 80px;
+    left: 618px;
+    top: 664px;
+
+    /* Primary 2 */
+    background: #FF60FA;
+    border-radius: 16px;
+}
+
+.nxt_btn2 {
+    /* btn_default */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 32px;
+    gap: 8px;
+    position: absolute;
+    width: 203px;
+    height: 80px;
+    left: 1018px;
+    top: 664px;
+
+    /* Primary 2 */
+    background: #FF60FA;
+    border-radius: 16px;
+}
+
+.btn_content {
+    /* 開始任務 */
+    width: 139px;
+    height: 32px;
+    font-family: 'Cubic 11';
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    /* identical to box height, or 32px */
+
+    /* Assist 1 */
+    color: #2B2B2B;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.page_content {
+
+    position: absolute;
+    width: 998px;
+    height: 210px;
+    left: 221px;
+    top: 232px;
+
+    font-family: 'Cubic 11';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 150%;
+    /* or 42px */
+
+
+    /* Assist 2 */
+
+    color: #FFF9F6;
+
+}

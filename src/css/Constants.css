@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'Cubic 11';
+    src: url('../fonts/Cubic_11/fonts/ttf/Cubic_11_1.013_R.ttf') format("truetype"),
+        url('../fonts/Cubic_11/fonts/web/Cubic_11_1.013_R.woff') format("woff");
+}

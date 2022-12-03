@@ -1,0 +1,21 @@
+.itme1 {
+    /* king */
+    position: absolute;
+    width: 659.54px;
+    height: 637.89px;
+    left: 920px;
+    top: 618px;
+    border-color: black;
+    background-image: url('../../assets/PageA/king.png');
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.process_bar_1 {
+    /* progressbar */
+    position: absolute;
+    width: 1200px;
+    height: 24px;
+    left: 120px;
+    top: 88px;
+}

@@ -1,0 +1,46 @@
+.previous_page {
+    /* previous_page */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    position: absolute;
+    width: 107px;
+    height: 40px;
+    left: 16px;
+    top: 16px;
+}
+
+.itme2 {
+    /* po */
+    position: absolute;
+    width: 463px;
+    height: 612px;
+    left: 992px;
+    top: 616px;
+    border-color: black;
+    background-image: url('../../assets/PageB/po.png');
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.arrow_big_default {
+    /* arrow_big_default */
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    left: 668px;
+    top: 640px;
+    background-image: url('../../assets/PageB/arrow_big_default.png');
+    background-repeat: no-repeat;
+}
+
+.process_bar_2 {
+    /* progressbar */
+    position: absolute;
+    width: 1200px;
+    height: 24px;
+    left: 120px;
+    top: 88px;
+}
