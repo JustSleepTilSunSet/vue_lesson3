@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Hello World!!"/>
-    <div class="flex-container">
-        <DraggableLesson msg="清單列表1"/>
-        <DraggableLesson msg="清單列表2"/>
-        <DraggableLesson msg="清單列表3"/>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <h1>我是容器1</h1>
+      <div style="margin-left:25% margin-right:25%">
+        <div class="outerConatiner">
+          <DraggableSample1></DraggableSample1>
+          <DraggableSample2></DraggableSample2>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import DraggableLesson from './components/DraggableLesson.vue';
+import DraggableSample1 from './sample1.vue';
+import DraggableSample2 from './sample2.vue';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    DraggableLesson
+    DraggableSample1,
+    DraggableSample2
   }
 }
 </script>
 
 <style>
-@import url('./css/RootCss.css') ;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>
