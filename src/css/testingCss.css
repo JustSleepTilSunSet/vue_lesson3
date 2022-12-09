@@ -10,7 +10,7 @@
     border-radius: 30px;
 }
 
-.outerConatiner {
+.outerContainer {
     display: flex ;
     flex-direction: row;
     width:80%;
@@ -43,6 +43,14 @@
     width: 100%;
     height: 100%;
 }
+
+.optionSelected
+{
+    border: dashed blue;
+    width: 100%;
+    height: 100%;
+}
+
 .emptyContent
 {
     background-color:
