@@ -37,9 +37,10 @@ export default {
   },
   methods:{
     dragoverHandler(element, event){
-      //禁止s1被取代的時候造成跑版。
+      //id為s1類的不會再被取代了。
       if(!(element.id).includes("s1_")){
         element.itemClass = "insteadContent";
+        this.overItem = element;
       }
 
       //若沿路上發生取代，則恢復id為s2的元件。
@@ -55,8 +56,6 @@ export default {
         this.myArray[preItemIdx] = preItem;
       }
 
-      //檢視取代掉的物件
-      this.overItem = element;
       this.$emit("Right-Trigger", this.overItem);
     },
     dragleaveHandler(element){
