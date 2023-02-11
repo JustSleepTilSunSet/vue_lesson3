@@ -1,14 +1,14 @@
 <template>
     <!--導傳元件-->
     <div>
-      <h1>我是容器1</h1>
+      <h1>to-do list</h1>
       <div style="margin-left:25% margin-right:25%">
         <div class="outerContainer">
           <DraggableSample1 @Left-Trigger="LeftHandler" :RightItem="RightItem"></DraggableSample1>
           <DraggableSample2 @Right-Trigger="RightHandler" :LeftItem="LeftItem"></DraggableSample2>
         </div>
       </div>
-    <button @click="clickHandler"> hhhhhhhh </button>
+    <button @click="clickHandler" class="button button2"> {{this.helloMsg}} </button>
     </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
    data() {
     return {
         RightItem:{},
+        helloMsg:"Restart",
         LeftItem:{}
     };
   },
@@ -36,7 +37,10 @@ export default {
       this.RightItem = value;
     },
     clickHandler(){
-        this.helloMsg += "h";
+        this.RightItem={};
+        this.helloMsg="Restart";
+        this.LeftItem={};
+        location.reload();
     }
   }
 }
@@ -45,4 +49,17 @@ export default {
 
 <style>
 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {width: 50%;}
 </style>

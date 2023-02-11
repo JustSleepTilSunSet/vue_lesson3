@@ -1,6 +1,6 @@
   <template>
   <div class="sample1">
-    <h1>sample1</h1>
+    <h1>To-Do List</h1>
     
     <draggable v-model="myArray" group="people" @start="start" @end="end">
       <div v-for="element in myArray" :key="element.id" class = "optionSet" >
@@ -16,6 +16,7 @@
       </div>
     </draggable>
     <div>
+      sample2送到sample1:
       {{this.RightItem}}
     </div>
   </div>
@@ -32,7 +33,8 @@ export default {
     return {
       myArray: [],
       index:0,
-      replaceIdx:0
+      replaceIdx:0,
+      isMoveBySelf: true
     };
   },
   beforeMount() {
@@ -41,22 +43,19 @@ export default {
         index: this.index,
         id: `s1_${this.index}`,
         name: `content${this.index}`,
-        itemClass:"optionContent"
+        itemClass:"optionContent",
+        isReBack:false,
+        isAblePop: false
       });
     }
   },
   methods:{
     start(event){
-      // console.log(event.oldDraggableIndex);
-      // console.log(JSON.stringify(this.myArray[event.oldDraggableIndex],null,2));
       this.$emit("Left-Trigger", this.myArray[event.oldDraggableIndex]);
-      // const findOverItem = (element) => this.myArray[event.oldDraggableIndex].id == element.id;
-      // let idx = this.myArray.findIndex(findOverItem);
-      // console.log(`idx: ${idx}`);
-      // this.myArray.splice(idx, 1);
     },
     end(){
-      this.myArray.pop();
+      if(this.myArray[this.myArray.length-1].isAblePop)
+        this.myArray.pop();
     },
     dragOverHandler(element){
         element.itemClass = "optionEmpty";
@@ -66,6 +65,11 @@ export default {
     },
     dropHandler(element){
       element.itemClass = "optionContent";
+      if( element.isReBack && element.id.includes('s1_')){
+        let rebackItemIdx = this.myArray.findIndex((e)=> e.id==element.id);
+        this.myArray.splice(rebackItemIdx,rebackItemIdx);
+        alert("禁止回流物件!強制執行drop!");
+      }
     }
   },
   components: {
@@ -73,7 +77,7 @@ export default {
   },
   watch:{
     mainMsg:function(value){
-      console.log(`收到 ${value}`);
+      console.log(`mainMsg ${value}`); 
     }
   }
 };

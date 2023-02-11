@@ -1,19 +1,19 @@
 <template>
   <div class="sample2">
-    <h1>sample2</h1>
-    <draggable :options="{disabled : true}" v-model="myArray" group="people" @start="draggable = false" @end="draggable = false">
+    <h1>Priority queue</h1>
+    <draggable :options="{disabled : true}" v-model="myArray" group="people" @start="draggable = true" @end="draggable = true">
       <div v-for="element in myArray" :key="element.id" class="optionSet" >
         <div v-bind:class="element.itemClass"
         @dragover="dragoverHandler(element,$event)"
         @drop="dropHandler(element)"
         @dragenter="dragenterHandler(element)"
-        @dragleave="dragleaveHandler(element)"
         v-on:>
           {{ element.name }}
         </div>
       </div>
     </draggable>
     <div>
+      收到sample2
       {{this.LeftItem}}
     </div>
   </div>
@@ -22,7 +22,8 @@
 import draggable from 'vuedraggable'
 export default {
   props:{
-    LeftItem: Object
+    LeftItem: Object,
+    isRightMoveDone:false
   },
   data() {
     return {
@@ -58,17 +59,18 @@ export default {
 
       this.$emit("Right-Trigger", this.overItem);
     },
-    dragleaveHandler(element){
-      // console.log(`call resume. ${JSON.stringify(element,null,2)}`);
-    },
+
     dropHandler(element){
+      console.log(`Dropping.`);
       console.log(`dropHandler s2 element: ${JSON.stringify(element,null,2)}`);
       if(element.id.includes("s1_")){
         element.itemClass = "optionContent";
       }
     },
     dragenterHandler(element){
-      // console.log(`testing`);
+      console.log(`sample2 dragenterHandler:${JSON.stringify(element,null,2)}`);
+      element.isReBack = true;
+      element.isAblePop = true;
     }
   },
   beforeMount() {
@@ -87,7 +89,7 @@ export default {
   },
   watch:{
     overItem:function(value){//恢復上一個
-      console.log(`收到 ${JSON.stringify(value,null,2)}`);
+      console.log(`收到sample2 ${JSON.stringify(value,null,2)}`);
       const findOverItem = (element) => this.overItem.id == element.id;
       let idx = this.myArray.findIndex(findOverItem);
       this.myArray[idx] = this.LeftItem;
@@ -95,7 +97,6 @@ export default {
     LeftItem:function(val){
       this.resumeItems = [];
       this.resumeItemIdx = [];
-      console.log(`更新了`);
     }
   }
 };
